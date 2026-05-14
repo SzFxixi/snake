@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bv1gs3ltpl28p"]
+
+[ext_resource type="Script" uid="uid://b2niy457fn2pr" path="res://enemy.gd" id="1_4gyqm"]
+[ext_resource type="PackedScene" uid="uid://56s6f2pfqqdj" path="res://circle.tscn" id="1_7k104"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4gyqm"]
+radius = 25.019993
+
+[node name="enemy" type="CharacterBody2D" unique_id=1530644235]
+script = ExtResource("1_4gyqm")
+
+[node name="Sprite2D" parent="." unique_id=76563192 instance=ExtResource("1_7k104")]
+circle_color = Color(1, 1, 1, 1)
+outline_color = Color(1, 0, 0, 1)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1069766207]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1100220261]
+shape = SubResource("CircleShape2D_4gyqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1929029899]
+shape = SubResource("CircleShape2D_4gyqm")
+disabled = true

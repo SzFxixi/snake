@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cs5vkrn7iimss"]
+
+[ext_resource type="Script" uid="uid://biitk46k0ryja" path="res://snack_head.gd" id="1_gxkgb"]
+[ext_resource type="PackedScene" uid="uid://56s6f2pfqqdj" path="res://circle.tscn" id="2_2x2sd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gxkgb"]
+radius = 26.0
+
+[node name="snack_head" type="CharacterBody2D" unique_id=1699744108]
+script = ExtResource("1_gxkgb")
+
+[node name="Sprite2D" parent="." unique_id=1577074011 instance=ExtResource("2_2x2sd")]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1316591536]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1529126327]
+shape = SubResource("CircleShape2D_gxkgb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=244329538]
+shape = SubResource("CircleShape2D_gxkgb")
+disabled = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
